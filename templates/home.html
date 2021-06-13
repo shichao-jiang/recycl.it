@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Garbage</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256–2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+</head>
+<body style="background: 'Register.svg';background-size: cover; min-height: 100vh;">  
+    <div id="loginItems" class="loginItems">
+        <div class="c1 container-fluid form-group">
+            <h1 class="header">Welcome</h1>
+            <div id="map" class="mapHome">
+
+
+
+            </div>
+        </div>
+    </div>
+
+<div class="navbar">
+<nav>
+    <a href="/home" id="no" class="nav_button"><img src="{{url_for('static', filename='home-24px.svg')}}" style="width:30px"></a>
+    <a href="/organize" id="no" class="nav_button"><img src="{{url_for('static', filename='group.svg')}}" style="width:30px"></a>
+    <a href="/upload" id="no" class="nav_button"><img src="{{url_for('static', filename='add_a_photo-24px.svg')}}" style="width:30px"></a>
+    <a href="/notifications"  id="no" class="nav_button"><img src="{{url_for('static', filename='notification.svg')}}" style="width:30px"></a>
+    <a href="/profile" id="no" class="nav_button"><img src="{{url_for('static', filename='user-3.svg')}}" style="width:30px"></a>
+</nav>
+</div>
+</body>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2hyaWtiIiwiYSI6ImNrcHU5dTF3NTBjbncyeG52MmZjeWNmaXgifQ.OnjHsfVsI-fjbssyR0KydA'
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-96, 37.8],
+        pitch: 45,
+        zoom: 3
+    });
+
+    map.addControl(
+        new mapboxgl.NavigationControl()
+    );
+
+    /*map.addLayer({
+  'id': '3d-buildings',
+  'source': 'composite',
+  'source-layer': 'building',
+  'filter': ['==', 'extrude', 'true'],
+  'type': 'fill-extrusion',
+  'minzoom': 15,
+  'paint': {
+      'fill-extrusion-color': '#aaa',
+
+      // use an 'interpolate' expression to add a smooth transition effect to the
+      // buildings as the user zooms in
+      'fill-extrusion-height': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          15,
+          0,
+          15.05,
+          ['get', 'height']
+      ],
+      'fill-extrusion-base': [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          15,
+          0,
+          15.05,
+          ['get', 'min_height']
+      ],
+      'fill-extrusion-opacity': 0.6
+  }
+},
+);*/
+</script>
+{% for marker in markers %}
+    <script>
+    map.on('load', () => {
+        new mapboxgl.Marker().setLngLat([{{marker.lon}}, {{marker.lat}}]).setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + 'Garbage Found' + '</h3><p>{{ marker.description }}</p>' + '<img src="{{marker.img}}" style="width: 100px; height: 100px;"/>')).addTo(map);
+    });
+    </script>
+{% endfor %}
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="{{url_for('static', filename='upload.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>Report</title>
+</head>
+<body style="background-size: cover; min-height: 100vh;">
+    <div class="title">
+        <h1>Report</h1>
+    </div>
+    <form class="submit_form" action="/upload" method="POST" enctype="multipart/form-data">
+        <p class='regulartext'>Upload an Image</p>
+        <div class="upload">
+            <input type="file" accept="image/*" id="file-input" style="display:none" name="file" capture="environment">
+            <label for="file-input" class="white_button">Take a Photo</label>
+            <script>
+            const fileInput = document.getElementById('file-input');
+            fileInput.addEventListener('change', (e) => getLocation());
+            </script>
+        </div>
+        <input type="hidden" id="penis" name="coords" value="43.789614|-79.670184">
+        <p class='regulartext'>Give a Description</p>
+        <div class="description">
+            <textarea name="description" id="desc" class='desc' cols="30" rows="10" style="resize: none;"></textarea>
+        </div>
+        <div class="submitbutton">
+            <input type="submit" class="button_acc" value="Submit"></input>
+        </div>
+    </form>
+    <div class="navbar">
+        <nav>
+            <a href="/home" id="no" class="nav_button"><img src="{{url_for('static', filename='home-24px.svg')}}" style="width:30px"></a>
+            <a href="/organize" id="no" class="nav_button"><img src="{{url_for('static', filename='group.svg')}}" style="width:30px"></a>
+            <a href="/upload" id="no" class="nav_button"><img src="{{url_for('static', filename='add_a_photo-24px.svg')}}" style="width:30px"></a>
+            <a href="/notifications"  id="no" class="nav_button"><img src="{{url_for('static', filename='notification.svg')}}" style="width:30px"></a>
+            <a href="/profile" id="no" class="nav_button"><img src="{{url_for('static', filename='user-3.svg')}}" style="width:30px"></a>
+        </nav>
+    </div>
+    <script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            console.log("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        penis = document.getElementById("penis");
+        penis.value = "43.789614" + "|" + "-79.670184";
+        console.log(penis.value);
+    }
+    </script>
+</body>
+</html>

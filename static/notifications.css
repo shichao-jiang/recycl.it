@@ -1,0 +1,114 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
+body{
+    background: url('app.svg');
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+p{
+    font-size: 8px;
+}
+
+.card{
+    border-radius: 10px!important;
+    overflow: hidden!important;
+    display: block!important;
+    position: static!important;
+    display: inline-block!important;
+    margin-right: 20px;
+    width: 10rem;
+}
+
+.cardL{
+    border-radius: 10px!important;
+    overflow: hidden!important;
+    display: block!important;
+    position: static!important;
+    display: inline-block!important;
+    background: white;
+    width: 100%;
+}
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.card-img-top{
+
+}
+
+.card-text{
+    padding: 0!important;
+}
+
+.card-body{
+    padding: 10px 8px!important;
+}
+
+.c1{
+    width: 96%!important;
+    padding-top: 100px;
+    animation: pop 0.4s;
+}
+
+.list1::-webkit-scrollbar{
+    display: none;
+}
+
+.list2::-webkit-scrollbar{
+    display: none;
+}
+.list1{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 150px!important;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+}
+
+.list2{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 250px!important;
+    display: block;
+    margin: 0 auto!important;
+}
+@keyframes pop {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+
+}
+
+.nav_button {
+    width: 20%;
+    height: 100%;
+    display: inline;
+    padding: 19px;
+}
+
+#navb{
+    height: 6% !important;
+    justify-content: center;
+}
+
+#innernav{
+    width: 100% !important;
+}
+
+#no{
+    padding: 15px !important;
+}

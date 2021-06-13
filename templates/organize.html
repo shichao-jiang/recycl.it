@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Garbage</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256–2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="{{url_for('static', filename='organize.css')}}">
+</head>
+<body style="background: 'Register.svg';background-size: cover; min-height: 100vh;">  
+    <div id="loginItems" class="loginItems">
+        <div class="c1 container-fluid form-group">
+            <h1 class="header">Organize A Cleaning Party</h1>
+            <form action='/organize' method='POST'>
+            <div class="name">          
+                <p>Name: <input type="text" name="name" class="inputs"></p>
+                <hr>
+            </div>
+                <p>Date: <input type="date" name="date" class="inputs"></p>
+                <hr>
+                Marker:
+                <select name="marker_id">
+                    {% for marker in markers %}
+                        <option value="{{ marker.id }}">{{ marker.description }}</option>
+                    {% endfor %}
+                </select>
+                
+                <input class="btn btn-primary dropdown-toggle mr-4" type="submit" value="Select">
+            </form>
+        </div>
+    </div>
+    <div class="navbar">
+        <nav>
+            <a href="/home" id="no" class="nav_button"><img src="{{url_for('static', filename='home-24px.svg')}}" style="width:30px"></a>
+            <a href="/organize" id="no" class="nav_button"><img src="{{url_for('static', filename='group.svg')}}" style="width:30px"></a>
+            <a href="/upload" id="no" class="nav_button"><img src="{{url_for('static', filename='add_a_photo-24px.svg')}}" style="width:30px"></a>
+            <a href="/notifications"  id="no" class="nav_button"><img src="{{url_for('static', filename='notification.svg')}}" style="width:30px"></a>
+            <a href="/profile" id="no" class="nav_button"><img src="{{url_for('static', filename='user-3.svg')}}" style="width:30px"></a>
+        </nav>
+        </div>
+<router-outlet></router-outlet>
+</body>
+</html>
+

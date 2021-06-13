@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        filter: url(#filter);
+      }
+
+      .cls-3 {
+        filter: url(#filter-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="540" x2="540" y2="1920" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8258ed"/>
+      <stop offset="0.248" stop-color="#9473eb"/>
+      <stop offset="0.796" stop-color="#bdade5"/>
+      <stop offset="1" stop-color="#bdade5"/>
+    </linearGradient>
+    <filter id="filter" x="219" y="-761" width="1628" height="1312" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="8" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="3.742"/>
+      <feFlood result="flood" flood-opacity="0.25"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="-362" y="1133" width="1628" height="1312" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="4" dy="-6.928" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="3.742"/>
+      <feFlood result="flood" flood-opacity="0.25"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard 1">
+    <rect class="cls-1" width="1080" height="1920"/>
+    <path class="cls-2" d="M553.545-753.366L1830.53-157.9,1511.46,526.366,234.468-69.1Z"/>
+    <path id="Rectangle_2_copy" data-name="Rectangle 2 copy" class="cls-3" d="M-31.455,1155.63L1245.53,1751.1,926.455,2435.37-350.532,1839.9Z"/>
+  </g>
+</svg>

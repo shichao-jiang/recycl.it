@@ -1,0 +1,68 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
+body{
+    background-size: cover;
+}
+
+.mapJoin{
+    width: 100%;
+    height: 400px;
+    background-color: #FFFFFF;
+}
+.joinItems{
+    height: 10px;
+    width:100%;
+    padding-top: 50px;
+}
+.joinDetails{
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+}
+
+.description{
+    text-align: center;
+    float: left;
+    padding: 30px 40px;
+}
+.numPeople{
+    text-align: center;
+    float: right;
+    padding: 20px 30px;
+}
+
+#joinBtn{
+    cursor: pointer;
+    background-color: #ED4076;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 0 auto;
+    display:block;
+    margin-top: 10px;
+    padding: 10px 35px;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+@keyframes pop {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+.nav_button {
+    width: 20%;
+    height: 100%;
+    display: inline;
+    padding: 21px;
+}

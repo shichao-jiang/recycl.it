@@ -1,0 +1,77 @@
+*{
+    font-family: "Raleway", sans-serif;
+}
+body{
+    background: url('default.svg');
+    background-size: cover;
+}
+
+h1{
+    padding-top: 100px;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+.credits{
+    width: 100%;
+    height: 150px;
+    background-color: #FFFFFF;
+    margin-top: 150px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.loginItems{
+    width:100%;
+}
+
+
+.c1{
+    width: 75%!important;
+    margin-top: 0px;
+    animation: pop 0.4s;
+}
+
+.points{
+    left: 0;
+    width: 70%;
+    position: relative;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+.shop{
+
+    width: 30%;
+    position: relative;
+    top: 50%;
+    right: -80%;
+    top:-50%;
+    transform: translate(-50%, 0);
+}
+
+@keyframes pop {
+    from {transform: scale(0.5);}
+    to {transform: scale(1);}
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+
+}
+
+.nav_button {
+    width: 20%;
+    height: 100%;
+    display: inline;
+    padding: 19px;
+}

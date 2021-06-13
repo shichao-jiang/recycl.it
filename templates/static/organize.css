@@ -1,0 +1,91 @@
+*{
+    font-family: "Raleway", sans-serif !important;
+}
+
+h1 {
+    color: white;
+}
+
+body {
+    background-image: url('app.svg');
+    background-size: cover;
+}
+
+.title {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.submit_form {
+    margin-top: 15%;
+}
+
+.regulartext {
+    color: white;
+    font-weight: 500;
+    margin-left: 3%;
+}
+
+.upload {
+    text-align: center; 
+    margin-bottom: 15%;
+    margin-top: 8%;
+}
+
+.description {
+    text-align: center;
+}
+
+.desc {
+    width: 90%;
+    height: 170px;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 10px;   
+    font-size: 1rem;
+}
+
+.white_button {
+    width: 70%;
+    background-color: white !important;
+    height: 10%;
+    padding: 8px 35%;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.submitbutton {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.button_acc {
+    cursor: pointer;
+    background-color: #ED4076;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 0 auto;
+    display:block;
+    padding: 10px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 0;
+}
+    
+.button_acc:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.button_acc::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Garbage</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256–2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="{{url_for('static', filename='profile.css')}}">
+</head>
+<body style="background: 'default.svg';background-size: cover; min-height: 100vh;">  
+    <div id="loginItems" class="loginItems">
+
+        <div class="c1 container-fluid form-group">
+            <h1>My Account</h1><br>
+            <p>Your Name <img src="{{url_for('static', filename='pencil.svg')}}" width="20" height="20">{{ current_user.name }}</p>
+            <p>Email <img src="{{url_for('static', filename='pencil.svg')}}" width="20" height="20">{{ current_user.email }}</p>
+            <p>Password <img src="{{url_for('static', filename='pencil.svg')}}" width="20" height="20"> </p>
+        </div>
+
+        <div class="credits">
+            <div class="points">
+                <h1 style="padding-top:0px;"> {{ current_user.points }}</h1>
+                <p>Credits Available</p>
+            </div>
+            <div class="shop">
+                <img src="{{url_for('static', filename='shop.png')}}" width="100" height="100">
+            </div>
+        </div>
+    </div>
+<div class="navbar">
+    <nav>
+        <a href="/home" routerLinkActive="active" id="no" class="nav_button"><img src="{{url_for('static', filename='home-24px.svg')}}" style="width:30px"></a>
+        <a href="/organize" routerLinkActive="active" id="no" class="nav_button"><img src="{{url_for('static', filename='group.svg')}}" style="width:30px"></a>
+        <a href="/upload" routerLinkActive="active" id="no" class="nav_button"><img src="{{url_for('static', filename='add_a_photo-24px.svg')}}" style="width:30px"></a>
+        <a href="/notifications" routerLinkActive="active" id="no" class="nav_button"><img src="{{url_for('static', filename='notification.svg')}}" style="width:30px"></a>
+        <a href="/profile" routerLinkActive="active" id="no" class="nav_button"><img src="{{url_for('static', filename='user-3.svg')}}" style="width:30px"></a>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+</body>
+</html> 
